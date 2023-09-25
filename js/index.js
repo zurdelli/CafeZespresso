@@ -134,10 +134,6 @@ $(document).ready(function() {
     return false;
   });
 
-
-
-
-
   $('#prev').click(function(e) {
     e.preventDefault();
     $('.imagen').html($(foto).prev().html());
@@ -161,16 +157,10 @@ $(document).ready(function() {
     $('.imagen').html($(foto).next().html());
     foto = $(foto).next();
 
-    if(foto.prev().length == 0){
+    if(foto.prev().length == 0 || foto.next().length == 0){
       $('#prev').css('visibility', 'hidden');
     } else {
       $('#prev').css('visibility', 'visible');
-    }
-
-    if(foto.next().length == 0){
-      $('#next').css('visibility', 'hidden');
-    } else {
-      $('#next').css('visibility', 'visible');
     }
   });
 
